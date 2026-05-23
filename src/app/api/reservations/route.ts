@@ -1,10 +1,11 @@
 // src/app/api/reservations/route.ts
+
+export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { acquireLock, releaseLock, getIdempotencyResult, setIdempotencyResult } from '@/lib/redis';
 import { ReserveSchema } from '@/lib/schemas';
 
-export const dynamic = 'force-dynamic';
 
 const RESERVATION_TTL_MINUTES = 10;
 
