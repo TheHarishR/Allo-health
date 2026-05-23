@@ -1,4 +1,5 @@
 // src/app/api/cron/cleanup/route.ts
+export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import { releaseExpiredReservations } from '@/lib/expiry';
 
