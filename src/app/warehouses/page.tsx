@@ -1,4 +1,5 @@
 // src/app/warehouses/page.tsx
+export const dynamic = 'force-dynamic';
 import { Navbar } from '@/components/Navbar';
 import { MapPin, Package2, Warehouse } from 'lucide-react';
 import { prisma } from '@/lib/prisma';
