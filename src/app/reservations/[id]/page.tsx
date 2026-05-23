@@ -25,7 +25,7 @@ type PageStatus = 'loading' | 'ready' | 'confirming' | 'releasing' | 'error';
 
 export default function ReservationPage() {
   const { id } = useParams<{ id: string }>();
-  const router = useRouter();
+  
 
   const [reservation, setReservation] = useState<Reservation | null>(null);
   const [status, setStatus] = useState<PageStatus>('loading');
