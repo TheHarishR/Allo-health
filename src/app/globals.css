@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F5F5F0;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-border: #E8E8E3;
+  --accent: #2563EB;
+  --accent-light: #EFF6FF;
+  --success: #16A34A;
+  --success-light: #F0FDF4;
+  --danger: #DC2626;
+  --danger-light: #FEF2F2;
+  --warning: #D97706;
+  --warning-light: #FFFBEB;
+  --muted: #6B7280;
+  --muted-bg: #F9F9F6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist), system-ui, sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-[#E8E8E3] rounded-2xl overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply bg-[#1A1A1A] text-white px-4 py-2.5 rounded-xl text-sm font-semibold
+    hover:bg-[#333] active:scale-95 transition-all duration-150 disabled:opacity-40
+    disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  .btn-outline {
+    @apply border border-[#E8E8E3] bg-white text-[#1A1A1A] px-4 py-2.5 rounded-xl
+    text-sm font-semibold hover:border-[#1A1A1A] hover:bg-[#F5F5F0]
+    active:scale-95 transition-all duration-150;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 text-white px-4 py-2.5 rounded-xl text-sm font-semibold
+    hover:bg-red-700 active:scale-95 transition-all duration-150
+    disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-success {
+    @apply bg-green-600 text-white px-4 py-2.5 rounded-xl text-sm font-semibold
+    hover:bg-green-700 active:scale-95 transition-all duration-150
+    disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .badge-green {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-yellow {
+    @apply badge bg-yellow-100 text-yellow-700;
+  }
+
+  .badge-red {
+    @apply badge bg-red-100 text-red-700;
+  }
+
+  .badge-blue {
+    @apply badge bg-blue-100 text-blue-700;
+  }
+
+  .badge-gray {
+    @apply badge bg-gray-100 text-gray-600;
+  }
+}
+
+/* Countdown pulse animation */
+@keyframes pulse-countdown {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.countdown-urgent {
+  animation: pulse-countdown 1s ease-in-out infinite;
+}
+
+/* Smooth page transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Product image zoom */
+.product-image-container:hover .product-image {
+  transform: scale(1.03);
+}
+
+.product-image {
+  transition: transform 0.4s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
