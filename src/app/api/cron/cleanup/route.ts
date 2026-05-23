@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import { releaseExpiredReservations } from '@/lib/expiry';
 
-export const dynamic = 'force-dynamic';
+
 
 export async function GET(request: NextRequest) {
   // Verify cron secret to prevent unauthorized calls
